@@ -29,10 +29,10 @@ Render.run(render);
 Runner.run(engine);
 
 // Variables de estado del juego
-let currentBody = null;
-let currentFruit = null;
+let currentBody : any = null;
+let currentFruit : any = null;
 let disableAction = false;
-let movementInterval = null;
+let movementInterval: any = null;
 
 // Función para añadir frutas
 function addFruits() {
@@ -53,7 +53,7 @@ function addFruits() {
 }
 
 // Movimiento y control de frutas
-function moveFruit(direction) {
+function moveFruit(direction: any) {
   const positionX = currentBody.position.x;
   const radius = currentFruit.radius;
   const moveStep = 10;
@@ -95,8 +95,8 @@ window.onkeyup = (e) => {
 };
 
 // Manejo de colisiones
-Events.on(engine, "collisionStart", (event) => {
-  event.pairs.forEach((pair) => {
+Events.on(engine, "collisionStart", (event: any) => {
+  event.pairs.forEach((pair : any) => {
     const { bodyA, bodyB, collision } = pair;
     
     // Lógica de combinación de frutas
